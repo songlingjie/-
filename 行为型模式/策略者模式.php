@@ -21,6 +21,10 @@
  */
 interface DiscountStrategy
 {
+    /**
+     * @param $order
+     * @return int
+     */
     public function getDiscount($order);
 }
 
@@ -30,9 +34,14 @@ interface DiscountStrategy
  */
 class NormalDiscountStrategy implements DiscountStrategy
 {
+    /**
+     * @param $order
+     * @return int
+     */
     public function getDiscount($order)
     {
         // 普通订单计算优惠金额实现逻辑
+        return 0;
     }
 }
 
@@ -42,9 +51,14 @@ class NormalDiscountStrategy implements DiscountStrategy
  */
 class  GroupBuyDiscountStrategy implements DiscountStrategy
 {
+    /**
+     * @param $order
+     * @return int
+     */
     public function getDiscount($order)
     {
         // 团购订单计算优惠金额实现逻辑
+        return 0;
     }
 }
 
@@ -78,11 +92,17 @@ class DiscountStrategyFactory
     }
 }
 
-// 策略模式使用
 
+
+// 策略模式使用
 class OrderDetail
 {
-
+    /**
+     * 计算订单优惠金额
+     * @param $order
+     * @return int
+     * @throws Exception
+     */
     public function getDiscountAmount($order)
     {
         $orderType = $order->order_type;
