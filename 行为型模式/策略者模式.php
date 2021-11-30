@@ -86,7 +86,7 @@ class DiscountStrategyFactory
             if (!isset(self::$orderType2StrategyMap[$orderType])) {
                 throw  new Exception("not support order type". $orderType);
             }
-            self::$instances[$orderType] = self::$orderType2StrategyMap[$orderType];
+            self::$instances[$orderType] = new self::$orderType2StrategyMap[$orderType];
         }
         return self::$instances[$orderType];
     }
