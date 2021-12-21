@@ -6,12 +6,6 @@
  * Time: 10:02 AM
  */
 
-interface people
-{
-    public function eating();
-}
-
-
 /**
  * 定义：在不改变原有类的接口的条件下 对原有类进行增强, 并支持多个装饰器嵌套使用
  * 举例：laravel框架中的中间件
